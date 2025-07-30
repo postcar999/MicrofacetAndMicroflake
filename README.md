@@ -23,7 +23,7 @@ $f_s^m(i,o,m)$은 이상적인(ideal) 반사와 투과 함수로 정의한다.
 $f_s^m(i,o,m)=\rho\frac{\delta_{\omega_o}(s, o)}{|o \cdot m|}$
 
 $o$방향 입체각(solid-angle)을 측정량을 $d\omega_{o}$로 표현하고, 이 측정량으로 적분을 하면 다음 과 같이 된다:
-$\int_{\Omega}g(o)\delta_{\omega_{o}}(s,o)d\omega_{o}=\{g(s)\quad if \in\Omega, 0\quad otherwise$
+$\int_{\Omega}g(o)\delta_{\omega_{o}}(s,o)d\omega_{o}=\{g(s)\quad if \in\Omega, 0\quad otherwise\}$
 
 [Eq.1]에서 위BSDF를 사용하려면, microsurface의 노멀과 그에 맞는 입체각 변환을 도입해야한다.
 먼저 입사방향과 방사방향이 주어진 상황에서 단일 microsurface노멀을 계산 할 수 있다. $i$에서 $o$로 전환될때 에너지가 산란되고, 여기서 미시적으로 노멀 역활할 microsurface노멀을 정의한다. 이 노멀은 half-vector이다. 그다음 $h$와 $m$사이의 델타 함수로 다시 BSDF를 만든다:
