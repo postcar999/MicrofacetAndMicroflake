@@ -114,7 +114,9 @@ $$
 $$
 = \int \frac{|i \cdot m|}{|i \cdot n|} F_r(i,m) \frac{\delta(h_r,m)}{4|i \cdot h_r|} \frac{1}{|o \cdot n|}G(i,o,m)D(m)d\omega_m
 $$
+
 Dirac 델타함수로 적분이 제거($m\to h_r$)
+
 $$
 = \frac{|i \cdot h_r|}{|i \cdot n|} F_r(i,h_r) \frac{1}{4|i \cdot h_r||o \cdot n|}G(i,o,h_r)D(h_r)
 $$
@@ -123,6 +125,7 @@ $$
 $$
 
 정리를하면,
+
 $$
 f_r(i,o,n)=\frac{F(i,h_r)G(i,o,h_r)D(h_r)}{4|i \cdot n||o \cdot n|}
 $$
