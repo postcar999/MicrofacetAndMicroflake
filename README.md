@@ -15,17 +15,19 @@ D항은 microfacet 분포함수이고, G는 microfacet의 시각적 영향을 �
 
 ### 이상적 반사BRDF(Ideal Reflection)
 렌더링식에서 완벽한 평변 반사를 표현하는 BRDF를 대입하면,
+
 $$
 L(o) = \int_{\Omega}f_r(i,o)L_i(i)|n\cdot i|d\omega_i = F_r(r)L_i(r)
 $$
 
-완벽한 평변 반시이기 때문에, 반사방향은 입사방향 $i$가 있으면 반사방향은 $r$로 고정이 된다. 이 식을 Dirac 델타함수를 써서 적분을 단순화 할 수 있다. Dirac 델타함수는 수학적인 함수가 아닌 일반화된 함수로 단순화된 식으로 유도할 수 있다.
+완벽한 평변 반사이기 때문에, 반사방향은 입사방향 $i$가 있으면 반사방향은 $r$로 고정이 된다. 이 식을 Dirac 델타함수를 써서 적분을 단순화 할 수 있다. Dirac 델타함수는 수학적인 함수가 아닌 일반화된 함수로 단순화된 식으로 유도할 수 있다.
 
 $$
 L(o)=\int\delta(i-r)F_r(i)L_i(i)[n \cdot i|d\omega_i = F_r(r)L_i(r)|n \cdot i|
 $$
 
 그리고 완벽한 평면 반사를 표현하기에는 $|n \cdot i|$이 빠져야 한다. 그러므로,
+
 $$
 f_r(o,i)=F_r(r)\frac{\delta(i-r)}{|n \cdot i|}
 $$
@@ -35,16 +37,18 @@ $$
 
 ### Macrosurface BSDF Integral
 Macrosurface BSDF모델은 미시적관점에서 이뤄지는 산란의 합 들로 구성한다. 즉 Microsurface단계에서 보이는 모든 시각적인 영향을 단일모델로 표현가능하게 총합(적분)하여 계산하게 한다. 미세면들의 노멀을 $m$ 으로 정의하고 시각적으로 전달되는 모든 면들을 D항 G항의 곱으로 표현한다. 정확한 요소를 적용하기 위해 미세면들로 입사하는 irradiance량을 microsurface로 변환하고 산란된 radiance들을 다시 macrosurface로 변환하려 돌려준다.
+
 $$
 f_s(i,o,n) = \int |\frac{i \cdot m}{i \cdot n}| f_s^m(i,o,m) |\frac{o \cdot m}{o \cdot n}|G(i,o,m)D(m)d\omega_m \quad(1)
 $$
+
 위 수식의 의미를 풀어쓴다면,
 
 $$
 f_s(i,o,n)=\int(i를\,m으로\,변환)\cdot(m의\,반사와\,투과함수)\cdot(o를\,m으로\,변환)\cdot G \cdot D \cdot 미소방향m
 $$
 
->$i$와 $o$를 $m$으로 변환이라고 풀어 썼지만, 좀더 정확하게 말하면 각각 $i,o$를 노멀$n$ 으로 입사량과 microsurface 노멀$m$ 과 입사량의 기하학적인 관계를 말한다
+>$i$와 $o$를 $m$으로 변환이라고 풀어 썼지만, 좀더 정확하게 말하면 각각 $i,o$를 노멀 $n$ 으로 입사량과 microsurface 노멀 $m$ 과 입사량의 기하학적인 관계를 말한다
 
 $f_s^m(i,o,m)$은 이상적인(ideal) 반사와 투과 함수로 정의하고, 본 문서에서는 반사만 다룬다.
 
@@ -66,7 +70,7 @@ $$
 f_s^m(i,o,m)=\rho(i,m)\frac{\delta_{\omega_{o}}(h(i,o),m)}{|o \cdot m|}||\frac{\partial\omega_{h}}{\partial\omega_{o}}||
 $$
 
-여기서 $||\frac{\partial\omega_{h}}{\partial\omega_{o}}||$는 Jocobian 행렬식 절대값이다. 이 Jacobian행렬은 $h$와 $o$간의 변환을 한다. 이 Jocobian은 두 공간의 편차 크기를 말한다. 방향$o$의 미소 입체각$d\omega_{o}$만큼 변화 했을때 $h$방향의 미소 입체각$d\omega_{o}$의 변화를 말한다:
+여기서 $||\frac{\partial\omega_{h}}{\partial\omega_{o}}||$는 Jocobian 행렬식 절대값이다. 이 Jacobian행렬은 $h$와 $o$간의 변환을 한다. 이 Jocobian은 두 공간의 편차 크기를 말한다. 방향 $o$의 미소 입체각 $d\omega_{o}$만큼 변화 했을때 $h$방향의 미소 입체각$d\omega_{o}$의 변화를 말한다:
 
 $$
 ||\frac{\partial\omega_{h}}{\partial\omega_{o}}||=\lim_{d\omega_{o} \to 0}\,\frac{d\omega_{h}}{d\omega_{o}}
@@ -81,7 +85,7 @@ $$
 ![](pic/umm_f2.png "그림2") 그림2
 
 ### $f_r^m$ 이상적 반사(Ideal Reflection)
-[식(2)]에서 좀더 풀어나가면 분모는 $o$와$h$간의 반사 벡터의 2제곱으로 다시 풀어쓸 수 있으며,
+[식(2)]에서 좀더 풀어나가면 분모는 $o$와 $h$간의 반사 벡터의 2제곱으로 다시 풀어쓸 수 있으며,
 
 $$
 \frac{|o \cdot h_{r}|}{||\vec{h_{r}}||^2}=\frac{|o \cdot h_{r}|}{(2|o \cdot h_{r}|)^2}=\frac{1}{4|o \cdot h_{r}|}\quad(3)
@@ -136,4 +140,4 @@ $$
 [M. Pharr et al] Physically Based rendering from Theory to Implementation Third Edition\
 [B. Walter et al] Microfacet Models for Refraction through Rough Surfaces, Eurographics Symposium on Rendering, 2007\
 [E. Heitz] Understanding the Masking-Shadowing Function  Microfacet-Based BRDFs, Journal of Computer Graphics Techniques Vol. 3, No. 2, 2014\
-[E. Heitz et al] Multiple-Scattering Microfacet BSDFs with the Smith Model, ACM Trans. Graph., Vol. 35, No. 4, Article 58, Publication Date: July 2016\
+[E. Heitz et al] Multiple-Scattering Microfacet BSDFs with the Smith Model, ACM Trans. Graph., Vol. 35, No. 4, Article 58, Publication Date: July 2016
