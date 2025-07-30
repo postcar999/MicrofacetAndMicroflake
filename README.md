@@ -130,7 +130,7 @@ $$
 f_r(i,o,n)=\frac{F(i,h_r)G(i,o,h_r)D(h_r)}{4|i \cdot n||o \cdot n|}
 $$
 
-이 모델은 Cook-Torrance BSDF와 같다. 분모에 $\pi$대신에 $4$로 변환된것만 다르다. 초기 논문에는 $D$항에 대한 정규화가 달랐지만 지금은 상수$4$를 쓰는것으로 합의되었고 일반화 된 상황이다.
+이 모델은 Cook-Torrance BSDF와 같다. 분모에 $\pi$대신에 $4$로 변환된것만 다르다. 초기 논문에는 $D$항에 대한 정규화가 달랐지만 지금은 상수 $4$를 쓰는것으로 합의되었고 일반화 된 상황이다.
 
 ## 참고문헌
 [M. Pharr etal] Physically Based rendering from Theory to Implementation Third Edition\
