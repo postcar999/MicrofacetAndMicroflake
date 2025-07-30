@@ -133,6 +133,7 @@ $$
 이 모델은 Cook-Torrance BSDF와 같다. 분모에 $\pi$대신에 $4$로 변환된것만 다르다. 초기 논문에는 $D$항에 대한 정규화가 달랐지만 지금은 상수 $4$를 쓰는것으로 합의되었고 일반화 된 상황이다.
 
 ## 참고문헌
-[M. Pharr etal] Physically Based rendering from Theory to Implementation Third Edition\
-[B. Walter etal] Microfacet Models for Refraction through Rough Surfaces, Eurographics Symposium on Rendering, 2007\
-[E. Heitz] Understanding the Masking-Shadowing Function  Microfacet-Based BRDFs, Journal of Computer Graphics Techniques Vol. 3, No. 2, 2014
+[M. Pharr et al] Physically Based rendering from Theory to Implementation Third Edition\
+[B. Walter et al] Microfacet Models for Refraction through Rough Surfaces, Eurographics Symposium on Rendering, 2007\
+[E. Heitz] Understanding the Masking-Shadowing Function  Microfacet-Based BRDFs, Journal of Computer Graphics Techniques Vol. 3, No. 2, 2014\
+[E. Heitz et al] Multiple-Scattering Microfacet BSDFs with the Smith Model, ACM Trans. Graph., Vol. 35, No. 4, Article 58, Publication Date: July 2016\
