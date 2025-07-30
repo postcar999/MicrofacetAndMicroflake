@@ -99,7 +99,7 @@ $$
 f_r^m(i,o,m)=F(i,m)\frac{\delta_{\omega_m}(h_r,m)}{4(i \cdot h_r)^2}
 $$
 
-여기서 Jacobian행렬 도입을 다른 의미로 설명해 보자면, $f_r^m$이 증가하려면$|i \cdot h_r|$이 감소 해야한다. 즉 이 상황은 off specular(정반사외(外) 반사영역)를 연출하는 효과가 나온다.
+여기서 Jacobian행렬 도입을 다른 의미로 설명해 보자면, $f_r^m$이 증가하려면 $|i \cdot h_r|$이 감소 해야한다. 즉 이 상황은 off specular(정반사외(外) 반사영역)를 연출하는 효과가 나온다.
 
 ### $f_t^m$, 이상적 투과(Ideal Refraction)
 본 문서에서는 투과부분은 설명하지 않는다. 그래서 $f_s^m(i,o,m)=f_r^m(i,o,m)$이라고 정의하고 넘어간다.
