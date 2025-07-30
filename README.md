@@ -54,11 +54,13 @@ $f_s^m(i,o,m)$은 이상적인(ideal) 반사와 투과 함수로 정의하고, �
 
 ## Microsurface Specualr BSDFs
 다시한번 언급하면 반반한(flat) 거울면들의 집합체로 미세면들을 정의하고, 이 면들을 거시적 관점으로 전환하여 모델화 시킨것이 Microfacet 분포 모델이라고 할 수 있다. 입사하는 에너지량($\rho$)이 입사방향($i$)에서 단일 스페큘러 반사 방향($o$)일때, 스페큘러 BSDF를 다음과 정의한다.
+
 $$
 f_s^m(i,o,m)=\rho\frac{\delta_{\omega_o}(s, o)}{|o \cdot m|}
 $$
 
 $o$방향 입체각(solid-angle)을 측정량을 $d\omega_{o}$로 표현하고, 이 측정량으로 적분을 하면 다음 과 같이 된다:
+
 $$
 \int_{\Omega}g(o)\delta_{\omega_{o}}(s,o)d\omega_{o}=\bigg\{\genfrac{}{}{0pt}{}{g(s)\quad if \in\Omega}{0\quad otherwise}
 $$
