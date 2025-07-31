@@ -75,7 +75,7 @@ $$
 여기서 $||\frac{\partial\omega_{h}}{\partial\omega_{o}}||$는 Jocobian 행렬식 절대값이다. 이 Jacobian행렬은 $h$와 $o$간의 변환을 한다. 이 Jocobian은 두 공간의 편차 크기를 말한다. 방향 $o$의 미소 입체각 $d\omega_{o}$만큼 변화 했을때 $h$방향의 미소 입체각$d\omega_{o}$의 변화를 말한다:
 
 $$
-||\frac{\partial\omega_{h}}{\partial\omega_{o}}||=\lim_{d\omega_{o} \to 0}\,\frac{d\omega_{h}}{d\omega_{o}}
+||\frac{\partial\omega_{h}}{\partial\omega_{o}}||=\lim_{d\omega_{o} \to 0}\ \frac{d\omega_{h}}{d\omega_{o}}
 $$
 
 입체각은 구면의 투영된 면적에 직접적인 연관을 말한다. 그리고 이 극미량 면적은 평면에 가깝다고 볼 수 있다. 이 극소 입체각$d\omega_{o}$이 극소 입체각$d\omega_{h}$로 변환되는 과정을 기하학적으로 풀어내면 다음과 같다:
