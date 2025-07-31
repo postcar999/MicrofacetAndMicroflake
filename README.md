@@ -23,7 +23,7 @@ $$
 완벽한 평변 반사이기 때문에, 반사방향은 입사방향 $i$가 있으면 반사방향은 $r$로 고정이 된다. 이 식을 Dirac 델타함수를 써서 적분을 단순화 할 수 있다. Dirac 델타함수는 수학적인 함수가 아닌 일반화된 함수로 단순화된 식으로 유도할 수 있다.
 
 $$
-L(o)=\int\delta(i-r)F_r(i)L_i(i)[n \cdot i|d\omega_i = F_r(r)L_i(r)|n \cdot i|
+L(o)=\int\delta(i-r)F_r(i)L_i(i)|n \cdot i|d\omega_i = F_r(r)L_i(r)|n \cdot i|
 $$
 
 그리고 완벽한 평면 반사를 표현하기에는 $|n \cdot i|$이 빠져야 한다. 그러므로,
