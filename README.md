@@ -23,7 +23,7 @@ $$
 완벽한 평변 반사이기 때문에, 반사방향은 입사방향 $i$가 있으면 반사방향은 $r$로 고정이 된다. 이 식을 Dirac 델타함수를 써서 적분을 단순화 할 수 있다. Dirac 델타함수는 수학적인 함수가 아닌 일반화된 함수로 단순화된 식으로 유도할 수 있다.
 
 $$
-L(o)=\int\delta(i-r)F_r(i)L_i(i)[n \cdot i|d\omega_i = F_r(r)L_i(r)|n \cdot i|
+L(o)=\int\delta(i-r)F_r(i)L_i(i)|n \cdot i|d\omega_i = F_r(r)L_i(r)|n \cdot i|
 $$
 
 그리고 완벽한 평면 반사를 표현하기에는 $|n \cdot i|$이 빠져야 한다. 그러므로,
@@ -75,7 +75,7 @@ $$
 여기서 $||\frac{\partial\omega_{h}}{\partial\omega_{o}}||$는 Jocobian 행렬식 절대값이다. 이 Jacobian행렬은 $h$와 $o$간의 변환을 한다. 이 Jocobian은 두 공간의 편차 크기를 말한다. 방향 $o$의 미소 입체각 $d\omega_{o}$만큼 변화 했을때 $h$방향의 미소 입체각$d\omega_{o}$의 변화를 말한다:
 
 $$
-||\frac{\partial\omega_{h}}{\partial\omega_{o}}||=\lim_{d\omega_{o} \to 0}\,\frac{d\omega_{h}}{d\omega_{o}}
+||\frac{\partial\omega_{h}}{\partial\omega_{o}}||=\lim_{d\omega_{o} \to 0}\ \frac{d\omega_{h}}{d\omega_{o}}
 $$
 
 입체각은 구면의 투영된 면적에 직접적인 연관을 말한다. 그리고 이 극미량 면적은 평면에 가깝다고 볼 수 있다. 이 극소 입체각$d\omega_{o}$이 극소 입체각$d\omega_{h}$로 변환되는 과정을 기하학적으로 풀어내면 다음과 같다:
