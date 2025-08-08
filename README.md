@@ -138,8 +138,43 @@ $$
 
 이 모델은 Cook-Torrance BSDF와 같다. 분모에 $\pi$대신에 $4$로 변환된것만 다르다. 초기 논문에는 $D$항에 대한 정규화가 달랐지만 지금은 상수 $4$를 쓰는것으로 합의되었고 일반화 된 상황이다.
 
+## Microflake
+We propose a new volume scattering model analogous to the well-known family of microfacet surface reflection models; we derive an anisotropic diffusion approximation.[W. Jakob et al]
+
+Many models for scattering from surfaces or in volumes have been proposed, with microfacet models for surfaces and the Henyey Greenstein model for volumes being the most widely used. The model proposed here has similarities to microfacet models and to Neyret’s volumetric textures, but differs in that it provides a physically based model for the volume setting.[W. Jakob et al]
+
+## Radiative Transfer Equation(RTE or LTE)
+RTE혹은 Light의 LTE라고 부르기도 하고, 매질(mass)내부에서 radiance의 변화율을 기술하는 미분방정식이다. 그래픽스에서는 3D공간상 미분이 필요하므로 델 연산자를 사용한다
+
+$$
+\frac{d}{ds}L(\omega)=\omega \cdot \nabla L(\omega)
+$$
+
+$$
+(\omega \cdot \nabla)L(\omega)=-\sigma_t L(\omega)+\sigma_s \int_{4\pi}p(\omega',\omega)L(\omega')d\omega'+Q(\omega)
+$$
+
+거리 $s$와 방향 $\omega$로 미소량의 radiance비율이다. 위 식을 쉽게 풀어쓰면
+
+$$
+\frac{미소량 L(\omega)}{미소량 거리 s}=(감소량) + (외부로부터\;들어오는\;빛) + (위치 광원)
+$$
+
+비등방성 매질을 묘사가능한 식을 위해 2방향 벡터를 독립적으로 작동하는 함수 $f_p$가 되어야한다. 즉, 방향과 무관하게 두 벡터의 각으로만 고려했던 기존방식 $f_p(\omega \to \omega')$을 벗어나야 한다. 뿐만아니라 산란계수 $\sigma_s$와 투과계수 $\sigma_t$도 다시정의하여 비등방성(anisotropic) RTE은:
+
+$$
+(\omega \cdot \nabla)L(\omega) = -\sigma_t(\omega)L(\omega) + \sigma_s(\omega) \int_{S^2}f_p(\omega' \to \omega)L(\omega')d\omega' + Q(\omega)
+$$
+
+>비등방성 매질을 고려한 분포도 함수인 $f_p$를 구성하려면 2가지 요소가 충돌 된다. **정규화와 대칭성**.
+
+![](pic/Niddles.png "그림3") 그림3
+
+비등방성 매질의 예인 바늘모양의 경우 빛이 정면과 측면으로 들어올때 생각해보면 $f_p$이 reciprocity가 유지 되지 않아서 이 함수의 표현을 바꿔서 비등방성 RTE를 유도해 나가야 한다. 
+
 ## 참고문헌
-[M. Pharr et al] Physically Based rendering from Theory to Implementation Third Edition\
-[B. Walter et al] Microfacet Models for Refraction through Rough Surfaces, Eurographics Symposium on Rendering, 2007\
-[E. Heitz] Understanding the Masking-Shadowing Function  Microfacet-Based BRDFs, Journal of Computer Graphics Techniques Vol. 3, No. 2, 2014\
-[E. Heitz et al] Multiple-Scattering Microfacet BSDFs with the Smith Model, ACM Trans. Graph., Vol. 35, No. 4, Article 58, Publication Date: July 2016
+###### [B. Walter et al] Microfacet Models for Refraction through Rough Surfaces, Eurographics Symposium on Rendering, 2007
+###### [E. Heitz] Understanding the Masking-Shadowing Function  Microfacet-Based BRDFs, Journal of Computer Graphics Techniques Vol. 3, No. 2, 2014
+###### [E. Heitz et al] Multiple-Scattering Microfacet BSDFs with the Smith Model, ACM Trans. Graph., Vol. 35, No. 4, Article 58, Publication Date: July 2016
+###### [M. Pharr et al] Physically Based rendering from Theory to Implementation Third Edition
+###### [W. Jakob et al] A Radiative Transfer Framework for Rendering Materials with Anisotropic Structure. In ACM Transactions on Graphics (Proceedings of SIGGRAPH 2010) 29(10). 53:1–53:13.
