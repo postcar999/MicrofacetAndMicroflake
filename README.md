@@ -17,13 +17,13 @@ D항은 microfacet 분포함수이고, G는 microfacet의 시각적 영향을 �
 렌더링식에서 완벽한 평변 반사를 표현하는 BRDF를 대입하면,
 
 $$
-L(o) = \int_{\Omega}f_r(i,o)L_i(i)|n\cdot i|d\omega_i = F_r(r)L_i(r)
+L(o) = \int_{\Omega}f_r(i,o)L_i(i)|n\cdot i|\text{d}\omega_i = F_r(r)L_i(r)
 $$
 
 완벽한 평변 반사이기 때문에, 반사방향은 입사방향 $i$가 있으면 반사방향은 $r$로 고정이 된다. 이 식을 Dirac 델타함수를 써서 적분을 단순화 할 수 있다. Dirac 델타함수는 수학적인 함수가 아닌 일반화된 함수로 단순화된 식으로 유도할 수 있다.
 
 $$
-L(o)=\int\delta(i-r)F_r(i)L_i(i)|n \cdot i|d\omega_i = F_r(r)L_i(r)|n \cdot i|
+L(o)=\int\delta(i-r)F_r(i)L_i(i)|n \cdot i|\text{d}\omega_i = F_r(r)L_i(r)|n \cdot i|
 $$
 
 그리고 완벽한 평면 반사를 표현하기에는 $|n \cdot i|$이 빠져야 한다. 그러므로,
@@ -39,7 +39,7 @@ $$
 Macrosurface BSDF모델은 미시적관점에서 이뤄지는 산란의 합 들로 구성한다. 즉 Microsurface단계에서 보이는 모든 시각적인 영향을 단일모델로 표현가능하게 총합(적분)하여 계산하게 한다. 미세면들의 노멀을 $m$ 으로 정의하고 시각적으로 전달되는 모든 면들을 D항 G항의 곱으로 표현한다. 정확한 요소를 적용하기 위해 미세면들로 입사하는 irradiance량을 microsurface로 변환하고 산란된 radiance들을 다시 macrosurface로 변환하려 돌려준다.
 
 $$
-f_s(i,o,n) = \int |\frac{i \cdot m}{i \cdot n}| f_s^m(i,o,m) |\frac{o \cdot m}{o \cdot n}|G(i,o,m)D(m)d\omega_m \quad(1)
+f_s(i,o,n) = \int |\frac{i \cdot m}{i \cdot n}| f_s^m(i,o,m) |\frac{o \cdot m}{o \cdot n}|G(i,o,m)D(m)\text{d}\omega_m \quad(1)
 $$
 
 위 수식의 의미를 풀어쓴다면,
@@ -59,10 +59,10 @@ $$
 f_s^m(i,o,m)=\rho\frac{\delta_{\omega_o}(s, o)}{|o \cdot m|}
 $$
 
-$o$방향 입체각(solid-angle)을 측정량을 $d\omega_{o}$로 표현하고, 이 측정량으로 적분을 하면 다음 과 같이 된다:
+$o$방향 입체각(solid-angle)을 측정량을 $\text{d}\omega_{o}$로 표현하고, 이 측정량으로 적분을 하면 다음 과 같이 된다:
 
 $$
-\int_{\Omega}g(o)\delta_{\omega_{o}}(s,o)d\omega_{o}=\{\genfrac{}{}{0pt}{}{g(s)\quad if \in\Omega}{0\quad otherwise}\}
+\int_{\Omega}g(o)\delta_{\omega_{o}}(s,o)\text{d}\omega_{o}=\{\genfrac{}{}{0pt}{}{g(s)\quad if \in\Omega}{0\quad otherwise}\}
 $$
 
 [식(1)]에서 위BSDF를 사용하려면, microsurface의 노멀과 그에 맞는 입체각 변환을 도입해야한다.
@@ -72,13 +72,13 @@ $$
 f_s^m(i,o,m)=\rho(i,m)\frac{\delta_{\omega_{o}}(h(i,o),m)}{|o \cdot m|}||\frac{\partial\omega_{h}}{\partial\omega_{o}}||
 $$
 
-여기서 $||\frac{\partial\omega_{h}}{\partial\omega_{o}}||$는 Jocobian 행렬식 절대값이다. 이 Jacobian행렬은 $h$와 $o$간의 변환을 한다. 이 Jocobian은 두 공간의 편차 크기를 말한다. 방향 $o$의 미소 입체각 $d\omega_{o}$만큼 변화 했을때 $h$방향의 미소 입체각$d\omega_{o}$의 변화를 말한다:
+여기서 $||\frac{\partial\omega_{h}}{\partial\omega_{o}}||$는 Jocobian 행렬식 절대값이다. 이 Jacobian행렬은 $h$와 $o$간의 변환을 한다. 이 Jocobian은 두 공간의 편차 크기를 말한다. 방향 $o$의 미소 입체각 $\text{d}\omega_{o}$만큼 변화 했을때 $h$방향의 미소 입체각$\text{d}\omega_{o}$의 변화를 말한다:
 
 $$
-||\frac{\partial\omega_{h}}{\partial\omega_{o}}||=\lim_{d\omega_{o} \to 0}\ \frac{d\omega_{h}}{d\omega_{o}}
+||\frac{\partial\omega_{h}}{\partial\omega_{o}}||=\lim_{\text{d}\omega_{o} \to 0}\ \frac{\text{d}\omega_{h}}{\text{d}\omega_{o}}
 $$
 
-입체각은 구면의 투영된 면적에 직접적인 연관을 말한다. 그리고 이 극미량 면적은 평면에 가깝다고 볼 수 있다. 이 극소 입체각$d\omega_{o}$이 극소 입체각$d\omega_{h}$로 변환되는 과정을 기하학적으로 풀어내면 다음과 같다:
+입체각은 구면의 투영된 면적에 직접적인 연관을 말한다. 그리고 이 극미량 면적은 평면에 가깝다고 볼 수 있다. 이 극소 입체각$\text{d}\omega_{o}$이 극소 입체각$\text{d}\omega_{h}$로 변환되는 과정을 기하학적으로 풀어내면 다음과 같다:
 
 $$
 ||\frac{\partial\omega_{h}}{\partial\omega_{o}}||=\frac{|o \cdot h_{r}|}{||\vec{h_{r}}||^2} \quad(2)
@@ -108,17 +108,17 @@ $$
 $f_s(i,o,m)=f_r(i,o,m) + f_t(i,o,m)$에서 반사만 다루기 때문에, $f_s(i,o,m)=f_r(i,o,m)$만 설명한다. 다시 [식(1)]에서 차근차근 유도해본다면,
 
 $$
-f_s(i,o,n) = \int |\frac{i \cdot m}{i \cdot n}| f_s^m(i,o,m) |\frac{o \cdot m}{o \cdot n}|G(i,o,m)D(m)d\omega_m
+f_s(i,o,n) = \int |\frac{i \cdot m}{i \cdot n}| f_s^m(i,o,m) |\frac{o \cdot m}{o \cdot n}|G(i,o,m)D(m)\text{d}\omega_m
 $$
 $$
-= \int \frac{|i \cdot m|}{|i \cdot n|} F_r(i,m) \frac{\delta(h_r,m)}{|o \cdot m|} \frac{1}{4|i \cdot h_r|} \frac{|o \cdot m|}{|o \cdot n|}G(i,o,m)D(m)d\omega_m
+= \int \frac{|i \cdot m|}{|i \cdot n|} F_r(i,m) \frac{\delta(h_r,m)}{|o \cdot m|} \frac{1}{4|i \cdot h_r|} \frac{|o \cdot m|}{|o \cdot n|}G(i,o,m)D(m)\text{d}\omega_m
 $$
 $$
-= \int \frac{|i \cdot m|}{|i \cdot n|} F_r(i,m) \frac{\delta(h_r,m)}{\cancel{|o \cdot m|}} \frac{1}{4|i \cdot h_r|} \frac{\cancel{|o \cdot m|}}{|o \cdot n|}G(i,o,m)D(m)d\omega_m
+= \int \frac{|i \cdot m|}{|i \cdot n|} F_r(i,m) \frac{\delta(h_r,m)}{\cancel{|o \cdot m|}} \frac{1}{4|i \cdot h_r|} \frac{\cancel{|o \cdot m|}}{|o \cdot n|}G(i,o,m)D(m)\text{d}\omega_m
 $$
 
 $$
-= \int \frac{|i \cdot m|}{|i \cdot n|} F_r(i,m) \frac{\delta(h_r,m)}{4|i \cdot h_r|} \frac{1}{|o \cdot n|}G(i,o,m)D(m)d\omega_m
+= \int \frac{|i \cdot m|}{|i \cdot n|} F_r(i,m) \frac{\delta(h_r,m)}{4|i \cdot h_r|} \frac{1}{|o \cdot n|}G(i,o,m)D(m)\text{d}\omega_m
 $$
 
 Dirac 델타함수로 적분이 제거($m\to h_r$)
@@ -147,11 +147,11 @@ Many models for scattering from surfaces or in volumes have been proposed, with 
 RTE혹은 Light의 LTE라고 부르기도 하고, 매질(mass)내부에서 radiance의 변화율을 기술하는 미분방정식이다. 그래픽스에서는 3D공간상 미분이 필요하므로 델 연산자를 사용한다
 
 $$
-\frac{d}{ds}L(\omega)=\omega \cdot \nabla L(\omega)
+\frac{\text{d}}{\text{d}s}L(\omega)=\omega \cdot \nabla L(\omega)
 $$
 
 $$
-(\omega \cdot \nabla)L(\omega)=-\sigma_t L(\omega)+\sigma_s \int_{4\pi}p(\omega',\omega)L(\omega')d\omega'+Q(\omega)
+(\omega \cdot \nabla)L(\omega)=-\sigma_t L(\omega)+\sigma_s \int_{4\pi}p(\omega',\omega)L(\omega')\text{d}\omega'+Q(\omega)
 $$
 
 거리 $s$와 방향 $\omega$로 미소량의 radiance비율이다. 위 식을 쉽게 풀어쓰면
@@ -160,17 +160,90 @@ $$
 \frac{미소량 L(\omega)}{미소량 거리 s}=(감소량) + (외부로부터\;들어오는\;빛) + (위치 광원)
 $$
 
-비등방성 매질을 묘사가능한 식을 위해 2방향 벡터를 독립적으로 작동하는 함수 $f_p$가 되어야한다. 즉, 방향과 무관하게 두 벡터의 각으로만 고려했던 기존방식 $f_p(\omega \to \omega')$을 벗어나야 한다. 뿐만아니라 산란계수 $\sigma_s$와 투과계수 $\sigma_t$도 다시정의하여 비등방성(anisotropic) RTE은:
+비등방성 매질을 묘사가능한 식을 위해 2방향 벡터를 독립적으로 작동하는 함수 $f_p$가 되어야한다. 즉, 방향과 무관하게 두 벡터의 각으로만 고려했던 기존방식 $p(\omega', \omega)$에서 벗어나 2방향을 매개변수로 갖는 $f_p(\omega \to \omega')$으로 다시 정의한다. 뿐만아니라 산란계수 $\sigma_s$와 투과계수 $\sigma_t$도 다시정의하여 비등방성(anisotropic) RTE은:
 
 $$
-(\omega \cdot \nabla)L(\omega) = -\sigma_t(\omega)L(\omega) + \sigma_s(\omega) \int_{S^2}f_p(\omega' \to \omega)L(\omega')d\omega' + Q(\omega)
+(\omega \cdot \nabla)L(\omega) = -\sigma_t(\omega)L(\omega) + \sigma_s(\omega) \int_{S^2}f_p(\omega' \to \omega)L(\omega')\text{d}\omega' + Q(\omega)
 $$
 
 >비등방성 매질을 고려한 분포도 함수인 $f_p$를 구성하려면 2가지 요소가 충돌 된다. **정규화와 대칭성**.
 
-![](pic/Niddles.png "그림3") 그림3
+![](pic/niddles_incident.png "그림3") 그림3
 
-비등방성 매질의 예인 바늘모양의 경우 빛이 정면과 측면으로 들어올때 생각해보면 $f_p$이 reciprocity가 유지 되지 않아서 이 함수의 표현을 바꿔서 비등방성 RTE를 유도해 나가야 한다. 
+바늘모양 입자로 비등방성 매질을 표현한다고 할때, 빛이 정면과 측면으로 들어올때 생각해보면 $f_p$가 reciprocity가 유지 되지 않기 때문에 이 함수의 표현을 바꿔서 비등방성 RTE를 유도해 나가야 한다. 그리고 $f_p$는 정규화로 선택하고 microfacet과 동일한 방법으로 독립된 하나의 입자를 군중의 입자들로 Dirac 델타함수를 이용하여 거시적으로 표현된 적분식을 구성하여 풀어나간다.
+
+### 개별적인 입자(Isolated non-spherical particle)
+먼저 입자 하나 하나가 너무 적아서 다른 입자를 shadowing할 수 없다고 보자. 그리고 비등방성을 고려해야하므로 구형 입자도 아니다. 이런 전제로, radiance $L(\omega)$가 하나의 입자로 입사할때 3가지 함수를 정의해본다:
+
+$$
+\sigma(\omega),
+$$
+$$
+0 \leq \alpha(\omega) \leq 1,
+$$
+$$
+p(\omega \to \omega').
+$$
+
+$\sigma$는 $\omega^{\perp}$으로 정사영된 면적, $\alpha$는 방향 $\omega$로 받은 알베도값, $p$는 기존 phase function이다.
+
+여기서 $f_p$와 $p$를 구분해야하는데, $f_p$는 거시적으로 간주하는 매질의 전체적인 행동을 묘사한다면, $p$는 입자 하나의 속성을 묘사한다.
+
+하나의 입자가 산란되는 강도는:
+$$
+I(\omega)=\int_{S^2}p(\omega' \to \omega)\alpha(\omega'
+)\sigma(\omega')L(\omega')\text{d}\omega'
+$$
+
+로 수식이 표현된다. 구형 입자와 다르게 위 수식의 항들은 방향에따라 다른 값이 나오게 된다. 그리고 reciprocity를 지키기위해서 $p$함수만 고려하지 않고 산란의 강도 자체를 reciprocity를 따르게 구성한다.
+
+$$
+p(\omega \to \omega')\alpha(\omega)\sigma(\omega)=p(\omega' \to \omega)\alpha(\omega')\sigma(\omega')
+$$
+
+즉, 연결되어 있는 모든 항의 곱에 방향(source and receiver)을 서로 바꿨을때 reciprocity가 유지 된다라고 정의한다.($p$만 보면 그림3.에서 보듯이 reciprocity가 될 수 없다.)
+
+### 볼륨안에서 입자의 분포
+![](pic/oriented_particles.png "그림4") 그림4
+
+볼륨안에 많은 산란 입자들의 속성을 보자. 개별적으로 속성도 있지만 입자들의 방향 분포도 고려해야한다. 입자의 모양도 수식 간소화를 위해 한 축기준으로 대칭성을 갖고, 모든 입자는 동일한 모양으로 간주한다.
+>이것은 microfacet에서도 microsurface들이 같다고 한점과 동일한 접근이다.
+
+$$
+\rho,
+$$
+
+$$
+D(m).
+$$
+
+$\rho$는 볼륨의 입자 밀도, $D(m)$은 방향 $m$으로 향한 단일 입자의 확률 분포이다. 또한 $\sigma(m,\omega), \alpha(m, \omega), p(m, \omega \to \omega'), I(m, \omega)$등도 입자의 방향 $m$의 속성에 맞춰서 정의 할 수 있다.
+
+![](pic/cylindrical_beam.png "그림5") 그림5
+
+등방성 경우처럼, 방향 $m$을 고려한 비등방성 매질에서 빛의 감쇠와 내부 산란을 다음과 같다:
+
+$$
+\frac{\text{d}^2 I_{atten}(m, \omega)}{\text{d}s\,\text{d}m}=A\,\rho\,\sigma(m,\omega)D(m)L(\omega) \to
+\frac{\text{d}I_{atten}(\omega)}{\text{d}s}=A\left[\rho\int_{s^2}\sigma(m,\omega)D(m)dm\right]L(\omega),
+$$
+
+$$
+\frac{\text{d}^2 I_{inscat}(m, \omega)}{\text{d}s\,\text{d}m}=A\,\rho\,I(m, \omega)D(m) \to
+\frac{\text{d}I_{inscat}(\omega)}{d\text{d}}=A\left[\rho\int_{s^2}I(m,\omega)D(m)dm\right].
+$$
+
+여기서 그림5.에서 체적 $A\,\text{d}s$마다 $\text{d} I_{atten}(\omega)$와 $\text{d} I_{inscat}(\omega)$의 변화율로 $(\omega \cdot \nabla)L(\omega)$를 다시 쓰면:
+
+$$
+(\omega \cdot \nabla)L(\omega)=-\frac{\text{d} I_{atten}(\omega)}{A\,\text{d}s} + \frac{\text{d} I_{inscat}(\omega)}{A\,\text{d}s}
+$$
+
+이며,
+
+$$
+(\omega \cdot \nabla)L(\omega) + \sigma_t(\omega)L(\omega)=\int_{S^2}f_a(\omega' \leftrightarrow \omega)L(\omega')\text{d}\omega'
+$$
 
 ## 참고문헌
 ###### [B. Walter et al] Microfacet Models for Refraction through Rough Surfaces, Eurographics Symposium on Rendering, 2007
