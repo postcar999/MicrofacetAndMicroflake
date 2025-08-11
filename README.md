@@ -190,6 +190,7 @@ $\sigma$는 $\omega^{\perp}$으로 정사영된 면적, $\alpha$는 방향 $\ome
 여기서 $f_p$와 $p$를 구분해야하는데, $f_p$는 거시적으로 간주하는 매질의 전체적인 행동을 묘사한다면, $p$는 입자 하나의 속성을 묘사한다.
 
 하나의 입자가 산란되는 강도는:
+
 $$
 I(\omega)=\int_{S^2}p(\omega' \to \omega)\alpha(\omega'
 )\sigma(\omega')L(\omega')\text{d}\omega'
@@ -242,8 +243,14 @@ $$
 이며,
 
 $$
-(\omega \cdot \nabla)L(\omega) + \sigma_t(\omega)L(\omega)=\int_{S^2}f_a(\omega' \leftrightarrow \omega)L(\omega')\text{d}\omega'
+(\omega \cdot \nabla)L(\omega) + \sigma_t(\omega)L(\omega)=\int_{S^2}f_a(\omega' \leftrightarrow \omega)L(\omega')\text{d}\omega',
 $$
+
+$$
+where\quad\sigma_t(\omega)=\rho\int_{S^2}\sigma(m,\omega)D(m)\text{d}m
+$$
+
+로 정의한다.
 
 ## 참고문헌
 ###### [B. Walter et al] Microfacet Models for Refraction through Rough Surfaces, Eurographics Symposium on Rendering, 2007
