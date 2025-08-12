@@ -69,7 +69,7 @@ $$
 먼저 입사방향과 방사방향이 주어진 상황에서 단일 microsurface노멀을 계산 할 수 있다. $i$에서 $o$로 전환될때 에너지가 산란되고, 여기서 미시적으로 노멀 역활할 microsurface노멀을 정의한다. 이 노멀은 half-vector이다. 그다음 $h$와 $m$사이의 델타 함수로 다시 BSDF를 만든다:
 
 $$
-f_s^m(i,o,m)=\rho(i,m)\frac{\delta_{\omega_{o}}(h(i,o),m)}{|o \cdot m|}||\frac{\partial\omega_{h}}{\partial\omega_{o}}||
+f_s^m(i,o,m)=\rho(i,m)\frac{\delta_{\omega_{m}}(h(i,o),m)}{|o \cdot m|}||\frac{\partial\omega_{h}}{\partial\omega_{o}}||
 $$
 
 여기서 $||\frac{\partial\omega_{h}}{\partial\omega_{o}}||$는 Jocobian 행렬식 절대값이다. 이 Jacobian행렬은 $h$와 $o$간의 변환을 한다. 이 Jocobian은 두 공간의 편차 크기를 말한다. 방향 $o$의 미소 입체각 $\text{d}\omega_{o}$만큼 변화 했을때 $h$방향의 미소 입체각$\text{d}\omega_{o}$의 변화를 말한다:
