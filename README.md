@@ -157,7 +157,7 @@ $$
 거리 $s$와 방향 $\omega$로 미소량의 radiance비율이다. 위 식을 쉽게 풀어쓰면
 
 $$
-\frac{미소량\thinspace L(\omega)}{미소량\thinspace거리(s)}=-(투과로\thinspace인한\thinspace감소량) + (외부로부터\thinspace 들어오는\thinspace 빛) + (위치\thinspace광원)
+\frac{미소량\thinspace L(\omega)}{미소량\thinspace거리(s)}=-(투과로\thinspace인한\thinspace감소량) + (외부로부터\thinspace 들어오는\thinspace 빛) + (광원[\text{emissive}])
 $$
 
 비등방성 매질을 묘사가능한 식을 위해 2방향 벡터를 독립적으로 작동하는 함수 $f_p$가 되어야한다. 즉, 방향과 무관하게 두 벡터의 각으로만 고려했던 기존방식 $p(\omega', \omega)$에서 벗어나 2방향을 매개변수로 갖는 $f_p(\omega \to \omega')$으로 다시 정의한다. 뿐만아니라 산란계수 $\sigma_s$와 투과계수 $\sigma_t$도 다시정의하여 비등방성(anisotropic) RTE은:
