@@ -220,7 +220,7 @@ $$
 D(m).
 $$
 
-$\rho$는 볼륨의 입자 밀도, $D(m)$은 방향 $m$으로 향한 단일 입자의 확률 분포이다. 또한 $\sigma(m,\omega), \alpha(m, \omega), p(m, \omega \to \omega'), I(m, \omega)$등도 입자의 방향 $m$의 속성에 맞춰서 정의 할 수 있다.
+$\rho$는 볼륨의 입자 밀도, $D(m)$은 방향 $m$으로 향한 단일 입자의 확률 밀도이다. 또한 $\sigma(m,\omega), \alpha(m, \omega), p(m, \omega \to \omega'), I(m, \omega)$등도 입자의 방향 $m$의 속성에 맞춰서 정의 할 수 있다.
 
 ![](pic/cylindrical_beam.png "그림5") 그림5
 
@@ -332,7 +332,7 @@ $$
 $$
 
 $$
-f_p(\omega' \to \omega)=\frac{a\rho}{4\sigma_s(\omega)}\alpha(|\omega' \cdot h(\omega, -\omega')|)(D(h(\omega, -\omega'))+D(h(\omega, -\omega'))).
+f_p(\omega' \to \omega)=\frac{a\rho}{4\sigma_s(\omega)}\alpha(|\omega' \cdot h(\omega, -\omega')|)(D(h(\omega, -\omega'))+D(-h(\omega, -\omega'))).
 $$
 
 ## 참고문헌
