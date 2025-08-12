@@ -297,8 +297,10 @@ $$
 앞서 언급된바와 같이, phase function $f_p$는 정규화되어 있으며 $\int{f_p(\omega' \to \omega)}\text{d}\omega'=1$, reciprocity 속성도 따른다 $\sigma_s(\omega)f_p(\omega' \to \omega)=\sigma_s(\omega')f_p(\omega \to \omega')$
 
 ## 참고문헌
-###### [B. Walter et al] Microfacet Models for Refraction through Rough Surfaces, Eurographics Symposium on Rendering, 2007
-###### [E. Heitz] Understanding the Masking-Shadowing Function  Microfacet-Based BRDFs, Journal of Computer Graphics Techniques Vol. 3, No. 2, 2014
-###### [E. Heitz et al] Multiple-Scattering Microfacet BSDFs with the Smith Model, ACM Trans. Graph., Vol. 35, No. 4, Article 58, Publication Date: July 2016
-###### [M. Pharr et al] Physically Based rendering from Theory to Implementation Third Edition
-###### [W. Jakob et al] A Radiative Transfer Framework for Rendering Materials with Anisotropic Structure. In ACM Transactions on Graphics (Proceedings of SIGGRAPH 2010) 29(10). 53:1–53:13.
+<sub>
+[B. Walter et al] Microfacet Models for Refraction through Rough Surfaces, Eurographics Symposium on Rendering, 2007<br>
+[E. Heitz] Understanding the Masking-Shadowing Function  Microfacet-Based BRDFs, Journal of Computer Graphics Techniques Vol. 3, No. 2, 2014<br>
+[E. Heitz et al] Multiple-Scattering Microfacet BSDFs with the Smith Model, ACM Trans. Graph., Vol. 35, No. 4, Article 58, Publication Date: July 2016<br>
+[M. Pharr et al] Physically Based rendering from Theory to Implementation Third Edition<br>
+[W. Jakob et al] A Radiative Transfer Framework for Rendering Materials with Anisotropic Structure. In ACM Transactions on Graphics (Proceedings of SIGGRAPH 2010) 29(10). 53:1–53:13.<br>
+</sub>
