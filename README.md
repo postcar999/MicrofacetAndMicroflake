@@ -160,7 +160,7 @@ $$
 \frac{미소량\thinspace L(\omega)}{미소량\thinspace거리(s)}=-(투과로\thinspace인한\thinspace감소량) + (외부로부터\thinspace 들어오는\thinspace 빛) + (광원[\text{emissive}])
 $$
 
-비등방성 매질을 묘사가능한 식을 위해 2방향 벡터를 독립적으로 작동하는 함수 $f_p$가 되어야한다. 즉, 방향과 무관하게 두 벡터의 각으로만 고려했던 기존방식 $p(\omega', \omega)$에서 벗어나 2방향을 매개변수로 갖는 $f_p(\omega \to \omega')$으로 다시 정의한다. 뿐만아니라 산란계수 $\sigma_s$와 투과계수 $\sigma_t$도 다시정의하여 비등방성(anisotropic) RTE은:
+비등방성 매질을 묘사가능한 식을 위해 2방향 벡터를 독립적으로 작동하는 함수 $f_p$가 되어야한다. 즉, 방향과 무관하게 두 벡터의 각으로만 고려했던 기존방식 $p(\omega', \omega)$에서 벗어나 2방향을 매개변수로 갖는 $f_p(\omega \to \omega')$으로 다시 정의한다. 뿐만아니라 산란계수 $\sigma_s$와 투과계수 $\sigma_t$도 다시 정의하여 비등방성(anisotropic) RTE은:
 
 $$
 (\omega \cdot \nabla)L(\omega)=-\sigma_t(\omega)L(\omega) + \sigma_s(\omega) \int_{S^2}f_p(\omega' \to \omega)L(\omega')\text{d}\omega' + Q(\omega)
@@ -170,7 +170,7 @@ $$
 
 ![](pic/niddles_incident.png "그림3") 그림3
 
-바늘모양 입자로 비등방성 매질을 표현한다고 할때, 빛이 정면과 측면으로 들어올때 생각해보면 $f_p$가 reciprocity가 유지 되지 않기 때문에 이 함수의 표현을 바꿔서 비등방성 RTE를 유도해 나가야 한다. 그리고 $f_p$는 정규화로 선택하고 microfacet과 동일한 방법으로 독립된 하나의 입자를 군중의 입자들로 Dirac 델타함수를 이용하여 거시적으로 표현된 적분식을 구성하여 풀어나간다.
+바늘모양 입자로 비등방성 매질을 표현한다고 할때, 빛이 정면과 측면으로 들어올때 생각해보면 $f_p$가 reciprocity가 유지 되지 않기 때문에 이 함수의 표현을 바꿔서 reciprocity가 유지되게 하고 비등방성 RTE로 유도해 나가야 한다. 그리고 $f_p$는 정규화로 선택하였고 microfacet과 동일한 방법으로 독립된 하나의 입자를 군중의 입자들로 Dirac 델타함수를 이용하여 적분식으로 나타낸다. 즉, 이 적분식은 거시적으로 표현된 물리량이 된다.
 
 ### 개별적인 입자(Isolated non-spherical particle)
 먼저 입자 하나 하나가 너무 적아서 다른 입자를 shadowing할 수 없다고 보자. 그리고 비등방성을 고려해야하므로 구형 입자도 아니다. 이런 전제로, radiance $L(\omega)$가 하나의 입자로 입사할때 3가지 함수를 정의해본다:
@@ -192,6 +192,10 @@ $\sigma$는 $\omega^{\perp}$으로 정사영된 면적, $\alpha$는 방향 $\ome
 $$
 I(\omega)=\int_{S^2}p(\omega' \to \omega)\alpha(\omega'
 )\sigma(\omega')L(\omega')\text{d}\omega'
+$$
+
+$$
+(\omega로 강도)=\int_{\omega'로 적분}(\omega'에서\thinspace\omega간의\thinspace밀도)(\omega'로부터\thinspace면적과\thinspace알베도)
 $$
 
 로 수식이 표현된다. 구형 입자와 다르게 위 수식의 항들은 방향에따라 다른 값이 나오게 된다. 그리고 reciprocity를 지키기위해서 $p$함수만 고려하지 않고 산란의 강도 자체를 reciprocity를 따르게 구성한다.
