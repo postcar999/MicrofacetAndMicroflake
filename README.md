@@ -378,7 +378,8 @@ f_p(\omega' \to \omega) \to f_p(cos\theta),
 $$
 
 $$
-f_p(cos\theta)=\frac{a\rho}{4\space\underbrace{\sigma_s(\omega)}}\space\underbrace{\alpha(|\omega' \cdot h(\omega, -\omega')|)}\space\underbrace{(D(h(\omega, -\omega'))+D(-h(\omega, -\omega')))},
+\frac{a\rho}{4{\sigma_s(\omega)}}\alpha(|\omega' \cdot h(\omega, -\omega')|)(D(h(\omega, -\omega'))+D(-h(\omega, -\omega')))=
+\frac{a\rho}{4\space\sigma_s}\alpha(cos\frac{\theta}{2})(D(h(\omega, -\omega'))+D(-h(\omega, -\omega'))),
 $$
 
 $$
