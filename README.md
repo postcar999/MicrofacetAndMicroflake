@@ -296,6 +296,41 @@ $$
 
 앞서 언급된바와 같이, phase function $f_p$는 정규화되어 있으며 $\int{f_p(\omega' \to \omega)}\text{d}\omega'=1$, reciprocity 속성도 따른다 $\sigma_s(\omega)f_p(\omega' \to \omega)=\sigma_s(\omega')f_p(\omega \to \omega')$
 
+## Microflake Model
+flake는 방향성을 가진 이상적인 반사면을 양면(two-sided)으로된 모델로 한다. 이 전개는 microfacet와 같은데 볼륨으로 확장된 이론이 microflake이론이다. 또하나 공통점은 half-vector를 쓴다는 것이다. 그리고 microflake 분포를 microfacet에서 $D$항과 같이 되어 있는점이 다양한 비등방성 효과를 도입할 수 있는 구조이다.
+
+평면에 방향성을 가진 특성을 전제로, 단일 flake의 면적, 알베도, $p$항을 단순하게 정의 한다면,
+
+>$a$는  한면의 면적, $h(\omega_i,\omega_o):=(\omega_i+\omega_o)/||(\omega_i+\omega_o)||$
+
+$$
+\sigma(m, \omega)=a|\omega \cdot m|,
+$$
+
+$$
+\alpha(m, \omega)=\alpha(|\omega \cdot m|),
+$$
+
+$$
+p(m,\omega \to \omega)=\frac{\delta_{\omega}(m, h(\omega, -\omega'))+\delta_{\omega}(-m,h(\omega,-\omega'))}{4|\omega \cdot m|}.
+$$
+
+앙면이기 때문에 $\omega$와 $m$간의 각도는 절대값으로 정의되고, 이상적인 양면 반사입자이므로 Dirac 델타함수로 $p$항을 정의하였다. 그리고 $\omega$에서 $h$로 변환하면서 따라오는 $1/4|\omega \cdot m|$을 확인 할 수 있다[B. Walter et al].
+
+다시한번 $\sigma_t$, $\sigma_s$, $f_p$항을 위 항으로 다시 정리하면,
+
+$$
+\sigma_t(\omega)=a\thinspace \rho\int_{S^2}|\omega \cdot m|D(m)\thinspace\text{d}m,
+$$
+
+$$
+\sigma_s(\omega)=a\thinspace \rho\int_{S^2}\alpha(|\omega \cdot m|)|\omega \cdot m|D(m)\thinspace\text{d}m,
+$$
+
+$$
+f_p(\omega' \to \omega)=\frac{a\rho}{4\sigma_s(\omega)}\alpha(|\omega' \cdot h(\omega, -\omega')|)(D(h(\omega, -\omega'))+D(h(\omega, -\omega'))).
+$$
+
 ## 참고문헌
 <sub>
 [B. Walter et al] Microfacet Models for Refraction through Rough Surfaces, Eurographics Symposium on Rendering, 2007<br>
