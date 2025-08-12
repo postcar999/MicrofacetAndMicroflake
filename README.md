@@ -45,7 +45,7 @@ $$
 위 수식의 의미를 풀어쓴다면,
 
 $$
-f_s(i,o,n)=\int(i를\;m으로\;변환)\cdot(m의\;반사와\;투과함수)\cdot(o를\;m으로\;변환)\cdot G \cdot D \cdot 미소방향m
+f_s(i,o,n)=\int(i를\thinspace m으로\thinspace 변환)\cdot(m의\thinspace 반사와\thinspace 투과함수)\cdot(o를\thinspace m으로\thinspace 변환)\cdot G \cdot D \cdot 미소방향m
 $$
 
 >$i$와 $o$를 $m$으로 변환이라고 풀어 썼지만, 좀더 정확하게 말하면 각각 $i,o$를 노멀 $n$ 으로 입사량과 microsurface 노멀 $m$ 과 입사량의 기하학적인 관계를 말한다
@@ -157,7 +157,7 @@ $$
 거리 $s$와 방향 $\omega$로 미소량의 radiance비율이다. 위 식을 쉽게 풀어쓰면
 
 $$
-\frac{미소량 L(\omega)}{미소량 거리 s}=(감소량) + (외부로부터\;들어오는\;빛) + (위치 광원)
+\frac{미소량 L(\omega)}{미소량 거리 s}=(감소량) + (외부로부터\thinspace 들어오는\thinspace 빛) + (위치 광원)
 $$
 
 비등방성 매질을 묘사가능한 식을 위해 2방향 벡터를 독립적으로 작동하는 함수 $f_p$가 되어야한다. 즉, 방향과 무관하게 두 벡터의 각으로만 고려했던 기존방식 $p(\omega', \omega)$에서 벗어나 2방향을 매개변수로 갖는 $f_p(\omega \to \omega')$으로 다시 정의한다. 뿐만아니라 산란계수 $\sigma_s$와 투과계수 $\sigma_t$도 다시정의하여 비등방성(anisotropic) RTE은:
@@ -223,19 +223,19 @@ $\rho$는 볼륨의 입자 밀도, $D(m)$은 방향 $m$으로 향한 단일 입�
 등방성 경우처럼, 방향 $m$을 고려한 비등방성 매질에서 빛의 감쇠와 내부 산란은 다음과 같다:
 
 $$
-\frac{\text{d}^2 I_{atten}(m, \omega)}{\text{d}s\;\text{d}m}=A\;\rho\;\sigma(m,\omega)D(m)L(\omega) \to
+\frac{\text{d}^2 I_{atten}(m, \omega)}{\text{d}s\thinspace \text{d}m}=A\thinspace \rho\thinspace \sigma(m,\omega)D(m)L(\omega) \to
 \frac{\text{d}I_{atten}(\omega)}{\text{d}s}=A\left[\rho\int_{s^2}\sigma(m,\omega)D(m)dm\right]L(\omega),
 $$
 
 $$
-\frac{\text{d}^2 I_{inscat}(m, \omega)}{\text{d}s\;\text{d}m}=A\;\rho\;I(m, \omega)D(m) \to
+\frac{\text{d}^2 I_{inscat}(m, \omega)}{\text{d}s\thinspace \text{d}m}=A\thinspace \rho\thinspace I(m, \omega)D(m) \to
 \frac{\text{d}I_{inscat}(\omega)}{\text{d}s}=A\left[\rho\int_{s^2}I(m,\omega)D(m)dm\right].
 $$
 
-여기서 그림5.에서 체적 $A\;\text{d}s$마다 $\text{d} I_{atten}(\omega)$와 $\text{d} I_{inscat}(\omega)$의 변화율로 $(\omega \cdot \nabla)L(\omega)$를 다시 쓰면:
+여기서 그림5.에서 체적 $A\thinspace \text{d}s$마다 $\text{d} I_{atten}(\omega)$와 $\text{d} I_{inscat}(\omega)$의 변화율로 $(\omega \cdot \nabla)L(\omega)$를 다시 쓰면:
 
 $$
-(\omega \cdot \nabla)L(\omega)=-\frac{\text{d} I_{atten}(\omega)}{A\;\text{d}s} + \frac{\text{d} I_{inscat}(\omega)}{A\;\text{d}s}
+(\omega \cdot \nabla)L(\omega)=-\frac{\text{d} I_{atten}(\omega)}{A\thinspace \text{d}s} + \frac{\text{d} I_{inscat}(\omega)}{A\thinspace \text{d}s}
 $$
 
 이며,
@@ -271,13 +271,13 @@ $$
 $$
 
 $$
-\sigma_s(\omega)=\rho\int_{S^2}\int_{S^2}p(m, \omega' \to \omega)\alpha(m, \omega')\rho(m, \omega')D(m)\text{d}m\;\text{d}\omega',
+\sigma_s(\omega)=\rho\int_{S^2}\int_{S^2}p(m, \omega' \to \omega)\alpha(m, \omega')\rho(m, \omega')D(m)\text{d}m\thinspace \text{d}\omega',
 $$
 
 reciprocity특징을 가지고 있으므로 방향을 바꿔서 보면,
 
 $$
-\sigma_s(\omega)=\rho\int_{S^2}\int_{S^2}p(m, \omega \to \omega')\alpha(m, \omega)\rho(m, \omega)D(m)\text{d}m\;\text{d}\omega',
+\sigma_s(\omega)=\rho\int_{S^2}\int_{S^2}p(m, \omega \to \omega')\alpha(m, \omega)\rho(m, \omega)D(m)\text{d}m\thinspace \text{d}\omega',
 $$
 
 $$
