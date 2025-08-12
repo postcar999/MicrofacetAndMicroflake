@@ -17,19 +17,19 @@ D항은 microfacet 분포함수이고, G는 microfacet의 시각적 영향을 �
 렌더링식에서 완벽한 평변 반사를 표현하는 BRDF를 대입하면,
 
 $$
-L(o) = \int_{\Omega}f_r(i,o)L_i(i)|n\cdot i|\text{d}\omega_i = F_r(r)L_i(r)
+L(o)=\int_{\Omega}f_r(i,o)L_i(i)|n\cdot i|\text{d}\omega_i=F_r(r)L_i(r)
 $$
 
 완벽한 평변 반사이기 때문에, 반사방향은 입사방향 $i$가 있으면 반사방향은 $r$로 고정이 된다. 이 식을 Dirac 델타함수를 써서 적분을 단순화 할 수 있다. Dirac 델타함수는 수학적인 함수가 아닌 일반화된 함수로 단순화된 식으로 유도할 수 있다.
 
 $$
-L(o)=\int\delta(i-r)F_r(i)L_i(i)|n \cdot i|\text{d}\omega_i = F_r(r)L_i(r)|n \cdot i|
+L(o)=\int\delta(i-r)F_r(i)L_i(i)|n \cdot i|\text{d}\omega_i=F_r(r)L_i(r)|n \cdot r|
 $$
 
-그리고 완벽한 평면 반사를 표현하기에는 $|n \cdot i|$이 빠져야 한다. 그러므로,
+그리고 완벽한 평면 반사를 표현하기에는 $|n \cdot r|$이 빠져야 한다. 그러므로,
 
 $$
-f_r(o,i)=F_r(r)\frac{\delta(i-r)}{|n \cdot i|}
+f_r(i,o)=F_r(r)\frac{\delta(i-r)}{|n \cdot r|}
 $$
 
 으로 유도된다.
@@ -39,7 +39,7 @@ $$
 Macrosurface BSDF모델은 미시적관점에서 이뤄지는 산란의 합 들로 구성한다. 즉 Microsurface단계에서 보이는 모든 시각적인 영향을 단일모델로 표현가능하게 총합(적분)하여 계산하게 한다. 미세면들의 노멀을 $m$ 으로 정의하고 시각적으로 전달되는 모든 면들을 D항 G항의 곱으로 표현한다. 정확한 요소를 적용하기 위해 미세면들로 입사하는 irradiance량을 microsurface로 변환하고 산란된 radiance들을 다시 macrosurface로 변환하려 돌려준다.
 
 $$
-f_s(i,o,n) = \int |\frac{i \cdot m}{i \cdot n}| f_s^m(i,o,m) |\frac{o \cdot m}{o \cdot n}|G(i,o,m)D(m)\text{d}\omega_m \quad(1)
+f_s(i,o,n)=\int |\frac{i \cdot m}{i \cdot n}| f_s^m(i,o,m) |\frac{o \cdot m}{o \cdot n}|G(i,o,m)D(m)\text{d}\omega_m \quad(1)
 $$
 
 위 수식의 의미를 풀어쓴다면,
@@ -108,7 +108,7 @@ $$
 $f_s(i,o,m)=f_r(i,o,m) + f_t(i,o,m)$에서 반사만 다루기 때문에, $f_s(i,o,m)=f_r(i,o,m)$만 설명한다. 다시 [식(1)]에서 차근차근 유도해본다면,
 
 $$
-f_s(i,o,n) = \int |\frac{i \cdot m}{i \cdot n}| f_s^m(i,o,m) |\frac{o \cdot m}{o \cdot n}|G(i,o,m)D(m)\text{d}\omega_m
+f_s(i,o,n)=\int |\frac{i \cdot m}{i \cdot n}| f_s^m(i,o,m) |\frac{o \cdot m}{o \cdot n}|G(i,o,m)D(m)\text{d}\omega_m
 $$
 $$
 = \int \frac{|i \cdot m|}{|i \cdot n|} F_r(i,m) \frac{\delta(h_r,m)}{|o \cdot m|} \frac{1}{4|i \cdot h_r|} \frac{|o \cdot m|}{|o \cdot n|}G(i,o,m)D(m)\text{d}\omega_m
@@ -138,7 +138,7 @@ $$
 
 이 모델은 Cook-Torrance BSDF와 같다. 분모에 $\pi$대신에 $4$로 변환된것만 다르다. 초기 논문에는 $D$항에 대한 정규화가 달랐지만 지금은 상수 $4$를 쓰는것으로 합의되었고 일반화 된 상황이다.
 
-## Microflake
+## Microflake 이론
 We propose a new volume scattering model analogous to the well-known family of microfacet surface reflection models; we derive an anisotropic diffusion approximation.[W. Jakob et al]
 
 Many models for scattering from surfaces or in volumes have been proposed, with microfacet models for surfaces and the Henyey Greenstein model for volumes being the most widely used. The model proposed here has similarities to microfacet models and to Neyret’s volumetric textures, but differs in that it provides a physically based model for the volume setting.[W. Jakob et al]
@@ -163,7 +163,7 @@ $$
 비등방성 매질을 묘사가능한 식을 위해 2방향 벡터를 독립적으로 작동하는 함수 $f_p$가 되어야한다. 즉, 방향과 무관하게 두 벡터의 각으로만 고려했던 기존방식 $p(\omega', \omega)$에서 벗어나 2방향을 매개변수로 갖는 $f_p(\omega \to \omega')$으로 다시 정의한다. 뿐만아니라 산란계수 $\sigma_s$와 투과계수 $\sigma_t$도 다시정의하여 비등방성(anisotropic) RTE은:
 
 $$
-(\omega \cdot \nabla)L(\omega) = -\sigma_t(\omega)L(\omega) + \sigma_s(\omega) \int_{S^2}f_p(\omega' \to \omega)L(\omega')\text{d}\omega' + Q(\omega)
+(\omega \cdot \nabla)L(\omega)=-\sigma_t(\omega)L(\omega) + \sigma_s(\omega) \int_{S^2}f_p(\omega' \to \omega)L(\omega')\text{d}\omega' + Q(\omega)
 $$
 
 >비등방성 매질을 고려한 분포도 함수인 $f_p$를 구성하려면 2가지 요소가 충돌 된다. **정규화와 대칭성**.
