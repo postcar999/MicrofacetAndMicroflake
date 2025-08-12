@@ -6,7 +6,7 @@ In microfacet models, a detailed microsurface is replaced by a simplified macros
 BSDF는 면에 빛이 어떻게 산란이 되는지를 묘사하는 함수이다. 다시 설명하자면, 입사방향 $i$의 irradiance와 방사방향 $o$의 radiance의 비율을 정의한다. 이 관계를 함수로 표현하면 $f_s(i,o,n)$이다. 반사만 구성된다면 BRDF, 투과는 BTDF로 말한다. 여기서는 반사만 이해하고 설명하겠다.
 
 Microfacet 모델은 촘촘한 microsurface들을 단순macrosurface로 대체하고 산란 함수를 재정의한다. 이 재정의한 산란 함수는 microsurface의 방향성 산란들을 하나의 함수로 표현하여 쉽게 접근하여 모델을 정의하는 이론이다. 이 가정은 미세면들이 보이지 않을정도로 작아서, 거시적 관점에서 산란 방향 패턴을 분석하여 모델화 한다. 보통 기하학적으로 광학요소와 단일 산란(Single Scattering)만 모델화한다. microsurface내에서의 파장효과이나 2번이상 반사하는 등 복잡한 요소는 무시한다.
->&emsp;2번이상 반사 즉, Multiple Scattering는 [E. Heitz et al]에 연구되었다.
+>&emsp;2번이상 반사 즉, Multiple Scattering은 [E. Heitz et al]에 연구되었다.
 
 ![](pic/umm_f1.png "그림1") 그림1
 
@@ -185,9 +185,7 @@ $$
 p(\omega \to \omega').
 $$
 
-$\sigma$는 $\omega^{\perp}$으로 정사영된 면적, $\alpha$는 방향 $\omega$로 받은 알베도값, $p$는 기존 phase function이다.
-
-여기서 $f_p$와 $p$를 구분해야하는데, $f_p$는 거시적으로 간주하는 매질의 전체적인 행동을 묘사한다면, $p$는 입자 하나의 속성을 묘사한다.
+$\sigma$는 $\omega^{\perp}$으로 정사영된 면적, $\alpha$는 방향 $\omega$로 받은 알베도 값, $p$는 기존 phase function이다. 그리고, 여기서 $f_p$와 $p$를 구분해야하는데, $f_p$는 거시적으로 간주하는 매질의 전체적인 행동을 묘사한다면, $p$는 입자 하나의 속성을 묘사한다.
 
 하나의 입자가 산란되는 강도는:
 
@@ -202,7 +200,7 @@ $$
 p(\omega \to \omega')\alpha(\omega)\sigma(\omega)=p(\omega' \to \omega)\alpha(\omega')\sigma(\omega')
 $$
 
-즉, 연결되어 있는 모든 항의 곱에 방향(source and receiver)을 서로 바꿨을때 reciprocity가 유지 된다라고 정의한다.($p$만 보면 그림3.에서 보듯이 reciprocity가 될 수 없다.)
+즉, 연결되어 있는 모든 항의 곱에 방향(source and receiver)을 서로 바꿨을때 reciprocity가 유지 된다라고 정의한다.(그림3.에서 보듯이 $p$만 reciprocity가 될 수 없다.)
 
 ### 볼륨안에서 입자의 분포
 ![](pic/oriented_particles.png "그림4") 그림4
@@ -247,10 +245,56 @@ $$
 $$
 
 $$
-where\quad\sigma_t(\omega)=\rho\int_{S^2}\sigma(m,\omega)D(m)\text{d}m
+where,
+$$
+
+$$
+\sigma_t(\omega)=\rho\int_{S^2}\sigma(m,\omega)D(m)\text{d}m,
+$$
+
+$$
+f_a(\omega' \leftrightarrow \omega)=\rho\int_{S^2}p(m, \omega' \to \omega)\alpha(m, \omega')\sigma(m, \omega')D(m)\text{d}m.
 $$
 
 로 정의한다.
+
+$f_a$를 보면 아직은 정규화(normalization)가 안되어 있다. 정규화된 $f_a$를 $f_p$라고하고 $f_a$를 모든 입사각으로 들어오는 내부 산란 값을 나누면 정규화가 된다. 이 정규화시키는 값을 $\sigma_s$라고 하겠다:
+
+$$
+f_p(\omega' \to \omega)=\frac{f_a(\omega' \leftrightarrow \omega)}{\sigma_s(\omega)}
+$$
+
+$\sigma_s(\omega)$값을 구하는 방법은 $f_p$값을 모든 입사 방향으로 적분을 구하면 된다:
+
+$$
+\sigma_s(\omega)=\int_{S^2}f_p(\omega' \to \omega)\text{d}\omega',
+$$
+
+$$
+\sigma_s(\omega)=\rho\int_{S^2}\int_{S^2}p(m, \omega' \to \omega)\alpha(m, \omega')\rho(m, \omega')D(m)\text{d}m\,\text{d}\omega',
+$$
+
+reciprocity특징을 가지고 있으므로 방향을 바꿔서 보면,
+
+$$
+\sigma_s(\omega)=\rho\int_{S^2}\int_{S^2}p(m, \omega \to \omega')\alpha(m, \omega)\rho(m, \omega)D(m)\text{d}m\,\text{d}\omega',
+$$
+
+$$
+\sigma_s(\omega)=\rho\int_{S^2}\alpha(m, \omega)\rho(m, \omega)D(m)\left(\underbrace{\int_{S^2}p(m, \omega \to \omega')\text{d}m}_{=1}\right)\text{d}\omega',
+$$
+
+$$
+\sigma_s(\omega)=\rho\int_{S^2}\alpha(m,\omega)\sigma(m,\omega)D(m)\text{d}m.
+$$
+
+마지막으로, $f_a(\omega \leftrightarrow \omega')$를 $\sigma_s(\omega)f_p(\omega \to \omega')$으로 바꾸면 최종 비등방성 RTE가 완성된다:
+
+$$
+(\omega \cdot \nabla)L(\omega)+\sigma_t(\omega)L(\omega)=\sigma_s(\omega)\int_{S^2}f_p(\omega' \to \omega)L(\omega')\text{d}\omega'+Q(\omega)
+$$
+
+앞서 언급된바와 같이, phase function $f_p$는 정규화되어 있으며, 예로 $\int{f_p(\omega' \to \omega)}\text{d}\omega'=1$, reciprocity 속성도 따른다, 예로 $\sigma_s(\omega)f_p(\omega' \to \omega)=\sigma_s(\omega')f_p(\omega \to \omega')$
 
 ## 참고문헌
 ###### [B. Walter et al] Microfacet Models for Refraction through Rough Surfaces, Eurographics Symposium on Rendering, 2007
