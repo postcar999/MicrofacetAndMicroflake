@@ -62,7 +62,7 @@ $$
 $o$방향 입체각(solid-angle)을 측정량을 $\text{d}\omega_{o}$로 표현하고, 이 측정량으로 적분을 하면 다음 과 같이 된다:
 
 $$
-\int_{\Omega}g(o)\delta_{\omega_{o}}(s,o)\text{d}\omega_{o}=\{\genfrac{}{}{0pt}{}{g(s)\quad if \in\Omega}{0\quad otherwise}\}
+\int_{\Omega}g(o)\delta_{\omega_{o}}(s,o)\text{d}\omega_{o}=\left\{\genfrac{}{}{0pt}{}{g(s)\quad \text{if} \in\Omega}{0\quad \text{otherwise}}\right\}
 $$
 
 [식(1)]에서 위BSDF를 사용하려면, microsurface의 노멀과 그에 맞는 입체각 변환을 도입해야한다.
