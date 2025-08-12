@@ -144,7 +144,7 @@ We propose a new volume scattering model analogous to the well-known family of m
 Many models for scattering from surfaces or in volumes have been proposed, with microfacet models for surfaces and the Henyey Greenstein model for volumes being the most widely used. The model proposed here has similarities to microfacet models and to Neyret’s volumetric textures, but differs in that it provides a physically based model for the volume setting.[W. Jakob et al]
 
 ## Radiative Transfer Equation(RTE or LTE)
-RTE혹은 Light의 LTE라고 부르기도 하고, 매질(mass)내부에서 radiance의 변화율을 기술하는 미분방정식이다. 그래픽스에서는 3D공간상 미분이 필요하므로 델 연산자를 사용한다
+RTE혹은 Radiative를 Light로 바꿔서 LTE라고 부르기도 하고, 매질(mass)내부에서 radiance의 변화율을 기술하는 미분방정식이다. 그래픽스에서는 3D공간상 미분이 필요하므로 델 연산자를 사용한다
 
 $$
 \frac{\text{d}}{\text{d}s}L(\omega)=\omega \cdot \nabla L(\omega)
