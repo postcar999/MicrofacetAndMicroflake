@@ -45,7 +45,7 @@ $$
 위 수식의 의미를 풀어쓴다면,
 
 $$
-f_s(i,o,n)=\int(i를\,m으로\,변환)\cdot(m의\,반사와\,투과함수)\cdot(o를\,m으로\,변환)\cdot G \cdot D \cdot 미소방향m
+f_s(i,o,n)=\int(i를\;m으로\;변환)\cdot(m의\;반사와\;투과함수)\cdot(o를\;m으로\;변환)\cdot G \cdot D \cdot 미소방향m
 $$
 
 >$i$와 $o$를 $m$으로 변환이라고 풀어 썼지만, 좀더 정확하게 말하면 각각 $i,o$를 노멀 $n$ 으로 입사량과 microsurface 노멀 $m$ 과 입사량의 기하학적인 관계를 말한다
@@ -220,22 +220,22 @@ $\rho$는 볼륨의 입자 밀도, $D(m)$은 방향 $m$으로 향한 단일 입�
 
 ![](pic/cylindrical_beam.png "그림5") 그림5
 
-등방성 경우처럼, 방향 $m$을 고려한 비등방성 매질에서 빛의 감쇠와 내부 산란을 다음과 같다:
+등방성 경우처럼, 방향 $m$을 고려한 비등방성 매질에서 빛의 감쇠와 내부 산란은 다음과 같다:
 
 $$
-\frac{\text{d}^2 I_{atten}(m, \omega)}{\text{d}s\,\text{d}m}=A\,\rho\,\sigma(m,\omega)D(m)L(\omega) \to
+\frac{\text{d}^2 I_{atten}(m, \omega)}{\text{d}s\;\text{d}m}=A\;\rho\;\sigma(m,\omega)D(m)L(\omega) \to
 \frac{\text{d}I_{atten}(\omega)}{\text{d}s}=A\left[\rho\int_{s^2}\sigma(m,\omega)D(m)dm\right]L(\omega),
 $$
 
 $$
-\frac{\text{d}^2 I_{inscat}(m, \omega)}{\text{d}s\,\text{d}m}=A\,\rho\,I(m, \omega)D(m) \to
-\frac{\text{d}I_{inscat}(\omega)}{d\text{d}}=A\left[\rho\int_{s^2}I(m,\omega)D(m)dm\right].
+\frac{\text{d}^2 I_{inscat}(m, \omega)}{\text{d}s\;\text{d}m}=A\;\rho\;I(m, \omega)D(m) \to
+\frac{\text{d}I_{inscat}(\omega)}{\text{d}s}=A\left[\rho\int_{s^2}I(m,\omega)D(m)dm\right].
 $$
 
-여기서 그림5.에서 체적 $A\,\text{d}s$마다 $\text{d} I_{atten}(\omega)$와 $\text{d} I_{inscat}(\omega)$의 변화율로 $(\omega \cdot \nabla)L(\omega)$를 다시 쓰면:
+여기서 그림5.에서 체적 $A\;\text{d}s$마다 $\text{d} I_{atten}(\omega)$와 $\text{d} I_{inscat}(\omega)$의 변화율로 $(\omega \cdot \nabla)L(\omega)$를 다시 쓰면:
 
 $$
-(\omega \cdot \nabla)L(\omega)=-\frac{\text{d} I_{atten}(\omega)}{A\,\text{d}s} + \frac{\text{d} I_{inscat}(\omega)}{A\,\text{d}s}
+(\omega \cdot \nabla)L(\omega)=-\frac{\text{d} I_{atten}(\omega)}{A\;\text{d}s} + \frac{\text{d} I_{inscat}(\omega)}{A\;\text{d}s}
 $$
 
 이며,
@@ -271,13 +271,13 @@ $$
 $$
 
 $$
-\sigma_s(\omega)=\rho\int_{S^2}\int_{S^2}p(m, \omega' \to \omega)\alpha(m, \omega')\rho(m, \omega')D(m)\text{d}m\,\text{d}\omega',
+\sigma_s(\omega)=\rho\int_{S^2}\int_{S^2}p(m, \omega' \to \omega)\alpha(m, \omega')\rho(m, \omega')D(m)\text{d}m\;\text{d}\omega',
 $$
 
 reciprocity특징을 가지고 있으므로 방향을 바꿔서 보면,
 
 $$
-\sigma_s(\omega)=\rho\int_{S^2}\int_{S^2}p(m, \omega \to \omega')\alpha(m, \omega)\rho(m, \omega)D(m)\text{d}m\,\text{d}\omega',
+\sigma_s(\omega)=\rho\int_{S^2}\int_{S^2}p(m, \omega \to \omega')\alpha(m, \omega)\rho(m, \omega)D(m)\text{d}m\;\text{d}\omega',
 $$
 
 $$
@@ -294,7 +294,7 @@ $$
 (\omega \cdot \nabla)L(\omega)+\sigma_t(\omega)L(\omega)=\sigma_s(\omega)\int_{S^2}f_p(\omega' \to \omega)L(\omega')\text{d}\omega'+Q(\omega)
 $$
 
-앞서 언급된바와 같이, phase function $f_p$는 정규화되어 있으며, 예로 $\int{f_p(\omega' \to \omega)}\text{d}\omega'=1$, reciprocity 속성도 따른다, 예로 $\sigma_s(\omega)f_p(\omega' \to \omega)=\sigma_s(\omega')f_p(\omega \to \omega')$
+앞서 언급된바와 같이, phase function $f_p$는 정규화되어 있으며 $\int{f_p(\omega' \to \omega)}\text{d}\omega'=1$, reciprocity 속성도 따른다 $\sigma_s(\omega)f_p(\omega' \to \omega)=\sigma_s(\omega')f_p(\omega \to \omega')$
 
 ## 참고문헌
 ###### [B. Walter et al] Microfacet Models for Refraction through Rough Surfaces, Eurographics Symposium on Rendering, 2007
