@@ -335,6 +335,72 @@ $$
 f_p(\omega' \to \omega)=\frac{a\rho}{4\sigma_s(\omega)}\alpha(|\omega' \cdot h(\omega, -\omega')|)(D(h(\omega, -\omega'))+D(-h(\omega, -\omega'))).
 $$
 
+$D(m)=1/4\pi$경우, 기존 비등방성 산란으로 유도될 수 있다. phase function은 산란의 각도로만 결정되는 방식이 기존 비등방성 산란이다. 산란 계수 $\sigma_s$:
+
+$$
+\sigma_s=\frac{a\rho}{4\pi}\int_{s^2}\alpha(|\omega \cdot m|)|\omega \cdot m|\thinspace\text{d}m,
+$$
+
+$$
+\sigma_s=\frac{a\rho}{4\pi}\int_{0}^{2\pi}\int_{0}^{\pi}\alpha(|cos\theta|)|cos\theta|sin\theta\thinspace\text{d}\theta\thinspace\text{d}\phi,
+$$
+
+$$
+\sigma_s=\frac{a\rho}{4\pi}\int_{0}^{\pi}\alpha(|cos\theta|)|cos\theta|sin\theta\thinspace\text{d}\theta\underbrace{\int_{0}^{2\pi}1\thinspace\text{d}\phi}_{=2\pi},
+$$
+
+$$
+\sigma_s=\frac{a\rho}{2}\int_{0}^{\pi}\alpha(|cos\theta|)|cos\theta|sin\theta\thinspace\text{d}\theta,
+$$
+
+$$
+\sigma_s=\frac{a\rho}{2}2\int_{0}^{\frac{\pi}{2}}\alpha(cos\theta)cos\theta sin\theta\thinspace\text{d}\theta,
+$$
+
+$$
+\sigma_s=a\rho\int_{0}^{\frac{\pi}{2}}\alpha(cos\theta)cos\theta sin\theta\thinspace\text{d}\theta.
+$$
+
+그다음 투과 계수 $\sigma_t$:
+
+$$
+\sigma_t=\frac{a\rho}{4\pi}\underbrace{\int_{S^2}|\omega \cdot m|\thinspace\text{d}m}_{=2\pi}
+$$
+
+$$
+\sigma_t=\frac{a\rho}{2}
+$$
+
+마지막으로 $f_p$는 $cos\theta=\omega \cdot -\omega'$로 표현 가능한 함수가 되었으므로:
+
+$$
+f_p(\omega' \to \omega) \to f_p(cos\theta),
+$$
+
+$$
+f_p(cos\theta)=\frac{a\rho}{4\thinspace\underbrace{\sigma_s(\omega)}_{=\sigma_s}}\space\underbrace{\alpha(|\omega' \cdot h(\omega, -\omega')|)}_{=\alpha(cos\frac{\theta}{2})}(\underbrace{D(h(\omega, -\omega'))+D(-h(\omega, -\omega'))}_{=\frac{1}{4\pi}+\frac{1}{4\pi}}),
+$$
+
+$$
+f_p(cos\theta)=\frac{a\rho}{4\sigma_s}(\alpha(cos\frac{\theta}{2}))(\frac{1}{2\pi}),
+$$
+
+$$
+f_p(cos\theta)=\frac{a\rho}{8\pi\sigma_s}\alpha(cos\frac{\theta}{2}),
+$$
+
+$$
+f_p(cos{2\theta})=\frac{a\rho}{8\pi\sigma_s}\alpha(cos\theta),
+$$
+
+$$
+\alpha(cos\theta)=\frac{8\pi\sigma_s}{a\rho}f_p(cos2\theta),
+$$
+
+$$
+\alpha(cos\theta)=4\pi\frac{\sigma_s}{\sigma_t}f_p(cos2\theta).
+$$
+
 ## 참고문헌
 <sub>
 [B. Walter et al] Microfacet Models for Refraction through Rough Surfaces, Eurographics Symposium on Rendering, 2007<br>
