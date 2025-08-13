@@ -395,12 +395,10 @@ f_p(cos{2\theta})=\frac{a\rho}{8\pi\sigma_s}\alpha(cos\theta),
 $$
 
 $$
-\alpha(cos\theta)=\frac{8\pi\sigma_s}{a\rho}f_p(cos2\theta),
+\alpha(cos\theta)=\frac{8\pi\sigma_s}{a\rho}f_p(cos2\theta)=4\pi\frac{\sigma_s}{\sigma_t}f_p(cos2\theta).
 $$
 
-$$
-\alpha(cos\theta)=4\pi\frac{\sigma_s}{\sigma_t}f_p(cos2\theta).
-$$
+Henyey-Greenstein이나 Mie phase function으로 만들려면, 식 $\alpha(cos\theta)$을 각각 phase function으로 이식이 되게 맞춰어서 변경해주면 된다. 다른 등방성 phase function의 경우도 마찬가지로 하면된다.
 
 ## 참고문헌
 <sub>
