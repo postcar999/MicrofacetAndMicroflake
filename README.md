@@ -417,10 +417,7 @@ Henyey-Greenstein이나 Mie phase function으로 만들려면, 식 $\alpha(cos\t
 [B. Walter et al] Microfacet Models for Refraction through Rough Surfaces, Eurographics Symposium on Rendering, 2007<br>
 [E. Heitz] Understanding the Masking-Shadowing Function  Microfacet-Based BRDFs, Journal of Computer Graphics Techniques Vol. 3, No. 2, 2014<br>
 [E. Heitz et al] Multiple-Scattering Microfacet BSDFs with the Smith Model, ACM Trans. Graph., Vol. 35, No. 4, Article 58, Publication Date: July 2016<br>
+[J. Stam] An illumination model for a skin layer bounded by rough surfaces. In Rendering Techniques 2001: 12th Eurographics Workshop on Rendering (June 2001), pp. 39–52. 2, 4, 6<br>
 [M. Pharr et al] Physically Based rendering from Theory to Implementation Third Edition<br>
-[J. Stam] An illumination model for a skin layer
- bounded by rough surfaces.  In Rendering Techniques
- 2001: 12th Eurographics Workshop on Rendering (June
- 2001), pp. 39–52. 2, 4, 6<br>
 [W. Jakob et al] A Radiative Transfer Framework for Rendering Materials with Anisotropic Structure. In ACM Transactions on Graphics (Proceedings of SIGGRAPH 2010) 29(10). 53:1–53:13.<br>
 </sub>
