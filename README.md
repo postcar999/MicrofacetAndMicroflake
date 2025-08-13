@@ -346,7 +346,7 @@ $$
 $$
 
 $$
-\sigma_s=\frac{a\rho}{4\pi}\int_{0}^{\pi}\alpha(|cos\theta|)|cos\theta|sin\theta\thinspace\text{d}\theta\underbrace{\int_{0}^{2\pi}1\thinspace\text{d}\phi}_{=2\pi},
+\sigma_s=\frac{a\rho}{4\pi}\int_{0}^{\pi}\alpha(|cos\theta|)|cos\theta|sin\theta\thinspace\text{d}\theta\left(\underbrace{\int_{0}^{2\pi}1\thinspace\text{d}\phi}_{=2\pi}\right),
 $$
 
 $$
@@ -354,7 +354,7 @@ $$
 $$
 
 $$
-\sigma_s=\frac{a\rho}{2}2\int_{0}^{\frac{\pi}{2}}\alpha(cos\theta)cos\theta sin\theta\thinspace\text{d}\theta,
+\sigma_s=\frac{a\rho}{2}\space2\int_{0}^{\frac{\pi}{2}}\alpha(cos\theta)cos\theta sin\theta\thinspace\text{d}\theta,
 $$
 
 $$
@@ -364,7 +364,19 @@ $$
 그다음 투과 계수 $\sigma_t$:
 
 $$
-\sigma_t=\frac{a\rho}{4\pi}\underbrace{\int_{S^2}|\omega \cdot m|\thinspace\text{d}m}_{=2\pi}
+\sigma_t=\frac{a\rho}{4\pi}\int_{S^2}|\omega \cdot m|\thinspace\text{d}m
+$$
+
+$$
+\sigma_t=\frac{a\rho}{4\pi}\int_{0}^{2\pi}2\int_{0}^{\frac{\pi}{2}}cos\theta\thinspace sin\theta\thinspace\text{d}\theta\thinspace\text{d}\phi
+$$
+
+$$
+\sigma_t=\frac{a\rho}{4\pi}\int_{0}^{2\pi}\left(\underbrace{2\int_{0}^{\frac{\pi}{2}}cos\theta\thinspace sin\theta\thinspace\text{d}\theta}_{=1}\right)\thinspace\text{d}\phi
+$$
+
+$$
+\sigma_t=\frac{a\rho}{4\pi}\left(\underbrace{\int_{0}^{2\pi}\thinspace\text{d}\phi}_{=2\pi}\right)
 $$
 
 $$
