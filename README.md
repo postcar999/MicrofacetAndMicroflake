@@ -364,23 +364,23 @@ $$
 그다음 투과 계수 $\sigma_t$:
 
 $$
-\sigma_t=\frac{a\rho}{4\pi}\int_{S^2}|\omega \cdot m|\thinspace\text{d}m
+\sigma_t=\frac{a\rho}{4\pi}\int_{S^2}|\omega \cdot m|\thinspace\text{d}m,
 $$
 
 $$
-\sigma_t=\frac{a\rho}{4\pi}\int_{0}^{2\pi}2\int_{0}^{\frac{\pi}{2}}cos\theta\thinspace sin\theta\thinspace\text{d}\theta\thinspace\text{d}\phi
+\sigma_t=\frac{a\rho}{4\pi}\int_{0}^{2\pi}2\int_{0}^{\frac{\pi}{2}}cos\theta\thinspace sin\theta\thinspace\text{d}\theta\thinspace\text{d}\phi,
 $$
 
 $$
-\sigma_t=\frac{a\rho}{4\pi}\int_{0}^{2\pi}\left(\underbrace{2\int_{0}^{\frac{\pi}{2}}cos\theta\thinspace sin\theta\thinspace\text{d}\theta}_{=1}\right)\thinspace\text{d}\phi
+\sigma_t=\frac{a\rho}{4\pi}\int_{0}^{2\pi}\left(\underbrace{2\int_{0}^{\frac{\pi}{2}}cos\theta\thinspace sin\theta\thinspace\text{d}\theta}_{=1}\right)\thinspace\text{d}\phi,
 $$
 
 $$
-\sigma_t=\frac{a\rho}{4\pi}\left(\underbrace{\int_{0}^{2\pi}\thinspace\text{d}\phi}_{=2\pi}\right)
+\sigma_t=\frac{a\rho}{4\pi}\left(\underbrace{\int_{0}^{2\pi}\thinspace\text{d}\phi}_{=2\pi}\right),
 $$
 
 $$
-\sigma_t=\frac{a\rho}{2}
+\sigma_t=\frac{a\rho}{2}.
 $$
 
 마지막으로 $f_p$는 $cos\theta=\omega \cdot -\omega'$로 표현 가능한 함수가 되었으므로:
